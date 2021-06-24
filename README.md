@@ -18,13 +18,13 @@ provider "aws" {
 }
 
 module "infra" {
-  source  = "wcollins/infra/aws"
+  source  = "wcollins/awsinfra/aws"
   
-  vpc_name         = "vpc-aws-east-2"
+  vpc_name         = "vpc-aws-east"
   vpc_prefix       = "10.1.0.0/16"
   subnet_names     = ["subnet-01", "subnet-02", "subnet-03"]
   subnet_prefixes  = ["10.1.1.0/24", "10.1.2.0/24", "10.1.3.0/24"]
-  instance_names   = ["vm-east-01", "vm-east-02", "vm-east-03"]
-  admin_ssh_key    = var.admin_ssh_key
+  instance_names   = ["vm-aws-east-01", "vm-aws-east-02", "vm-aws-east-03"]
+  ssh_key          = var.ssh_key
 }
 ```
